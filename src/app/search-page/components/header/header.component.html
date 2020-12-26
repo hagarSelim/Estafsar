@@ -1,0 +1,20 @@
+<header class="site-header sticky-top py-1 bg--sec">
+  <nav class="container d-flex flex-column flex-md-row justify-content-between">
+    <a class="py-2" href="#">
+      <img width=103px src="../../../../assets/images/logo.png">
+    </a>
+    <div class="search-container">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text no--border bg--white color--gray"><i class="fa fa-search" aria-hidden="true"></i></span>
+        </div>
+        <input (keyup.enter)="getResults()" type="text" [(ngModel)]="search_string" class="form-control no--border" placeholder="Write to Search...." aria-label="Username"
+          aria-describedby="basic-addon1">
+      </div>
+    </div>
+
+    <div>
+      <button (click)="getResults()" class="btn bg--main color--white filter-btn">Search</button>
+    </div>
+  </nav>
+</header>

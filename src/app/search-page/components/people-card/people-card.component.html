@@ -1,0 +1,12 @@
+<div class="card  color--main">
+  <i  [className]="people.gender == 'female' ? 'fa fa-female color--gray float-left' : 'fa fa-male color--gray float-left'" aria-hidden="true"></i>
+  <div class="card-body float-left margin-l-15" >
+    <h5 class="card-title">{{people?.name}}</h5>
+    <p class="card-text"><span class="font-w-500">Height: <span
+          class="height-tag color--white bg--main">{{people?.height}}</span></span></p>
+    <p class="card-text"><span class="font-w-500">URL: </span>  <a class="card-link cursor--pointer" (click)="navigate(people?.url)">{{people?.url}}</a></p>
+    <p class="card-text"><span class="font-w-500">HomeWorld: </span> <a class="card-link cursor--pointer"
+      (click)="navigate(people?.url)">{{people?.homeworld}}</a></p>
+  </div>
+</div>
+

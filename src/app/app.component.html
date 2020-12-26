@@ -1,0 +1,16 @@
+<app-header (searchResults)="getSearchResults($event)"></app-header>
+<div class="container">
+  <div cdkDropList (cdkDropListDropped)="drop($event)" class="row margin-top-20">
+      <div cdkDrag *ngFor="let people of peoples  | paginate: { itemsPerPage: 10, currentPage: p, totalItems: total }"
+        class="col-md-12 col-sm-12 col-xs-12 margin-b-15">
+        <app-people-card [people]="people"></app-people-card>
+      </div>
+  </div>
+  <!--Pagination-->
+  <div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12 text-center">
+      <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
+    </div>
+  </div>
+</div>
+<ngx-loading [show]="_peopleService.loading"></ngx-loading>
